@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.carlos.agenda.models.Contact;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -52,18 +53,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public List<Contact> selectAll(){
-        List<Contact> listContacts = null;
+    public ArrayList<Contact> selectAll(){
+        ArrayList<Contact> listContacts = new ArrayList<>();
+        String id;
+        String name;
+        String number;
+        Contact newContact;
         SQLiteDatabase database = this.getReadableDatabase();
         Cursor cursor = database.query("contacts",
                 new String[] {"_id", "name", "phone_number"},
                 null, null, null, null, null);
         if(cursor.moveToFirst()){
             do {
-                String id = cursor.getString(cursor.getColumnIndex("_id"));
-                String name = cursor.getString(cursor.getColumnIndex("name"));
-                String number = cursor.getString(cursor.getColumnIndex("phone_number"));
-                listContacts.add(new Contact(id, name, number));
+                id = cursor.getString(cursor.getColumnIndex("_id"));
+                name = cursor.getString(cursor.getColumnIndex("name"));
+                number = cursor.getString(cursor.getColumnIndex("phone_number"));
+                newContact = new Contact(id, name, number);
+                listContacts.add(newContact);
             }while(cursor.moveToNext());
         }
         cursor.close();

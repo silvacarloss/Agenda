@@ -6,7 +6,7 @@ public class Contact {
         this.name = name;
         this.number = number;
     }
-    String id;
-    String name;
-    String number;
+    public String id;
+    public String name;
+    public String number;
 }

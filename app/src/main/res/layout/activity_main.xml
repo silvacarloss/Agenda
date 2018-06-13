@@ -7,6 +7,46 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:text="Telefone:"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginBottom="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="120dp"
+        android:text="Prox." />
+
+    <Button
+        android:id="@+id/btnPrevious"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="120dp"
+        android:text="Ante." />
+
     <Button
         android:id="@+id/btnNewContact"
         style="@style/AppTheme.RoundedCornerMaterialButton"
