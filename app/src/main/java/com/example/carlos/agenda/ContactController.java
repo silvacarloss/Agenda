@@ -1,6 +1,7 @@
 package com.example.carlos.agenda;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.widget.Toast;
 
 import com.example.carlos.agenda.database.DatabaseHelper;
@@ -27,5 +28,15 @@ public class ContactController {
         DatabaseHelper database = new DatabaseHelper(context);
         ArrayList<Contact> contacts = database.selectAll();
         return contacts;
+    }
+
+    public static void delete(Context context, String id) {
+        DatabaseHelper database = new DatabaseHelper(context);
+        database.delete(id);
+    }
+
+    public void edit(Context context, Contact contact){
+        DatabaseHelper database = new DatabaseHelper(context);
+        database.update(contact.id, contact.name, contact.number);
     }
 }
